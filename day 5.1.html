@@ -1,0 +1,57 @@
+<html>
+    <head>
+    </head>
+    <script type="text/javascript">
+         function add()
+        {
+            var a=parseInt(textA.value);
+            var b=parseInt(textB.value);
+            textAns.value=a+b;
+            alert(textAns.value);
+        }
+        function sub()
+        {
+            const a=parseInt(textA.value);
+            const b=parseInt(textB.value);
+            textAns.value=a-b;
+            alert(textAns.value);
+        }
+        function mul()
+        {
+            const a=parseFloat(textA.value);
+            const b=parseFloat(textB.value);
+            textAns.value=a*b;
+            alert(textAns.value);
+        }
+        function div()
+        {
+            let a=parseInt(textA.value);
+            let b=parseInt(textB.value);
+            textAns.value=a/b;
+            alert(textAns.value);
+        }
+        function CLR()
+        {
+            const a=parseInt(textA.value=0);
+            const b=parseInt(textB.value=0);
+            textAns.value=0;
+            alert(textAns.value);
+        }
+    </script>
+    <body>
+        <div id="D1" style="height: 500px; width: 320px; background-color: white; margin-left: 13.7cm; border: solid darkcyan; box-shadow: 0px,3px,1px,5px black;">
+            <div style="text-align:center;">
+                Enter First Number:<input type="text" value="0" widt h="200px" id="textA" style="margin-top: 10px;"/><br>
+                Enter First Number:<input type=" border-radius: 25%; text" value="0" width="200px" id="textB" style="margin-top: 10px;"/><br>
+                Ans:<input type="text" value="0" border-radius: 25%;  width="200px" id="textAns"  style="margin-top: 10px;" readonly/><br>
+                <div style="margin-top: 10px;">
+                        <input type="button" value="+" id="ADD" onclick="add()" style="height:30px;width: 30px; border-radius: 25%; background-color:darkslategrey; " >
+                        <input type="button" value="-" id="SUB" onclick="sub()" style="height:30px;width: 30px; border-radius: 25%; " >
+                        <input type="button" value="*" id="MUL" onclick="mul()" style="height:30px;width: 30px; border-radius: 25%; " >
+                        <input type="button" value="/" id="DIV" onclick="div()" style="height:30px;width: 30px; border-radius: 25%; " >
+                        <input type="button" value="C" id="CLR" onclick="CLR()" style="height:30px;width: 30px; border-radius: 25%; " >                       
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
