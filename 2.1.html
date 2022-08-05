@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>demo jquery</title>
+        
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+        <script Type=""text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                    $("#TxtTestFocus").focus(function(){
+                        $(this).css("background-color","red");
+                    });
+                    $("#TxtTestBlur").blur(function(){
+                        $(this).css("background-color","yellow");
+                    });
+                    $("#TxtTestKeyPress").keypress(function(){
+                        alert($(this).val());
+                    });
+                    $("#TxtTestKeyUp").keyup(function(){
+                        alert($(this).val());
+                    });
+                });        
+    </script>
+            </head>
+        </script>
+        </head>
+        <body>
+            <input type="text" id="TxtTestFocus" placeholder="ZzZzZzzZzZzZzZ" /><hr/>
+            <input type="text" id="TxtTestBlur" placeholder="zZzZzZzzZZzZZzZZzZz" /><hr/>
+            <input type="text" id="TxtTestKeyPress" placeholder="zZzZzZzzZZzZZzZZzZz" /><hr/>
+            <input type="text" id="TxtTestKeyUp" placeholder="ZzZzZzzZzZzZzZ" /><hr/>
+
+        </body>
