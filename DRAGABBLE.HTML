@@ -1,0 +1,121 @@
+<html>
+ <head>
+     <title>dragabble</title>
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js" type="text/javascript"></script>
+   
+    <style type="text/css">
+    
+         #MyDiv,#MyHomeDiv,#MyHorizontalDiv,#MyVerticalDiv,#MyDivDisable,#MyThreeSecondsDelayDiv
+         {
+              width:200px; 
+              height:200px; 
+              padding:10px; 
+              background:rgb(179, 214, 163);
+              color:#000000;
+              font-size:large;
+            
+              font-weight:bold
+              
+         }
+         #MyFiftyPixelDiv
+         {
+              width:800px; 
+              height:200px; 
+              padding:10px; 
+              background:rgb(38, 123, 149);
+              color:#ffffff;
+              font-size:large;
+              font-weight:bold
+         }
+         #MyHomeDiv,#MyHorizontalDiv,#MyVerticalDiv,#MyFiftyPixelDiv,#MyThreeSecondsDelayDiv
+         {
+             border:solid 3px #000000;
+             border-radius: 20px;
+         }
+         #MyDiv
+         {
+            border-radius: 20px;
+         }
+      </style>
+      
+      
+
+
+ </head>
+ <body>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#MyDiv").draggable();
+
+            $("#MyHomeDiv span").draggable({
+                containment: "#MyHomeDiv"
+            });
+
+            $("#MyHorizontalDiv span").draggable({
+                axis: "x"
+            });
+
+            $("#MyVerticalDiv span").draggable({
+                axis: "y"
+            });
+
+
+            $("#MyFiftyPixelDiv span").draggable({
+                distance: 200
+            });
+
+            $("#MyThreeSecondsDelayDiv span").draggable({
+                delay:3000
+            });
+            
+           });
+    </script>
+
+ </head>
+
+ <body>
+    
+    <div id ="MyDiv">
+       <p>--Drag Me--</p>
+    </div>
+    
+    <hr />
+    
+    <div id="MyHomeDiv">
+       <span>--Drag Me--</span><br /><br />
+    </div>
+    
+    <hr />
+
+    <div id="MyHorizontalDiv">
+       <span>--Drag Me--</span><br /><br />
+    </div>
+    
+    <hr />
+
+    <div id="MyVerticalDiv">
+       <span>--Drag Me--</span><br /><br />
+    </div>
+
+    <hr />
+
+    <div id="MyThreeSecondsDelayDiv">
+      <span>--Drag Me--</span></div>
+    </div>
+
+    <hr />
+
+    <div id="MyFiftyPixelDiv">
+       <span>--Drag Me--</span><br /><br />
+    </div>
+
+    <hr />
+
+ </body>
+</html>
+
+         
+ </body>
+</html> 

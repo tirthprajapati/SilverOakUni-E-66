@@ -1,40 +1,160 @@
-<!DOCTYPE html>
 <html>
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("button").click(function(){
-    $("#div1").fadeIn();
-    $("#div2").fadeIn("slow");
-    $("#div3").fadeIn(1000);
-    $("#div4").fadeIn(1200);
-    $("#div5").fadeIn(1400);
-    $("#div6").fadeIn(1800);
-    $("#div7").fadeIn(2000);
-    $("#div8").fadeIn(2300);
-    $("#div9").fadeIn(2600);
-    $("#div10").fadeIn(3000);
-  });
-});
+    <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#submit').click(function(e) {
+            var firstname = $('#firstname').val();
+            var addr = $('#addr').val();
+            var contact = $('#contact').val();
+            var state = $('#state').val();
+            var username = $('#username').val();
+            var email = $('#email').val();
+            var name_regex = /^[a-zA-Z]+$/;
+            var email_regex =/^[w-,+]+@[a-z,A-Z,0-9.-]+.[a-zA-z0-9]{2,4}$/;
+            var add_regex = /^[0-9a-zA-Z]+$/;
+            var contact_regex = /^[0-9]+$/;
+            
+            if (firstname.length == 0) {
+                $('#head').text("* All fields are mandatory *");  
+                $("#firstname").focus();
+                return true;
+            }
+            else if (!firstname.match(name_regex) || firstname.length == 0) {
+                $('#p1').text("* For your name please use alphabets only *"); 
+                $("#firstname").focus();
+                return false;   
+            }
+            else if (!(username.length >= 6 && username.length <= 8) || username.length == 0) {
+                $('#p2').text("* Please enter between 6 and 8 characters *"); 
+                $("#username").focus();
+                return false;
+            }
+            else if (!email.match(email_regex) || email.length == 0) {
+                $('#p3').text("* Please enter a valid email address *"); 
+                $("#email").focus();
+                return false;
+            }
+            else if (state == "Please Choose") {
+                $('#p4').text("* Please Choose any one option"); 
+                $("#state").focus();
+                return false;
+            }
+            else if (!addr.match(add_regex) || addr.length == 0) {
+                $('#p5').text("* For Address please use numbers and letters *"); 
+                $("#addr").focus();
+                return false;
+            }
+            else if (!contact.match(contact_regex) || contact.length == 0) {
+                $('#p6').text("* Please enter a valid contact no. *"); 
+                $("#contact").focus();
+                return false;
+            }
+            else {
+                alert("Form Submitted Successfuly!");   
+                return true;
+            }
+            });
+        });
 </script>
+<style type="text/css">
+@import "http://fonts.googleapis.com/css?family=Droid+Sans";
+@import "http://fonts.googleapis.com/css?family=Roboto+Slab";
+    body {
+        font-family:'Droid Sans',sans-serif;
+        font-size:14px
+    }
+    .main {
+        width:960px;
+        margin:10px auto
+    }
+    div#form {
+        border-radius: 10%;
+        margin-top:20px;
+        margin-left:230px;
+        padding:20px 0 20px 20px;
+        width:500px;
+        border:1px dashed #000;
+        float:left        
+    }
+    h2 {
+        text-align:center;
+        font-family:'Roboto Slab',serif
+    }
+
+    h1 {
+        margin-top:50px;
+        margin-left:60px
+    }
+    input {
+        width:250px;
+        height:27px;
+        padding:10,0,0,10px;
+        margin-top:10px;
+        border:1px solid #8d7979
+    }
+    #firstname {
+        margin-left:110px
+    }
+    #username {
+        margin-left:11px
+    }
+    #email {
+        margin-left:139px
+    }
+    #state {
+        margin-left:141px;
+        margin-top:10px
+    }
+    #addr {
+        margin-left:123px
+    }
+    #contact {
+        margin-left:105px
+    }
+    #submit {
+        margin-left: 190px;
+        justify-content: center;
+        border-radius: 20px;
+        width:100px;
+        height:35px;
+        margin-top:20px;
+        border:1px solid #000
+    }
+</style>
 </head>
-<body>
-
-<p>Demonstrate fadeIn() with different parameters.</p>
-
-<button>Click to fade in boxes</button><br><br>
-
-<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div>
-<div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div>
-<div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
-<div id="div4" style="width:80px;height:80px;display:none;background-color:yellow;"></div>
-<div id="div5" style="width:80px;height:80px;display:none;background-color:black;"></div>
-<div id="div6" style="width:80px;height:80px;display:none;background-color:powderblue;"></div>
-<div id="div7" style="width:80px;height:80px;display:none;background-color:aqua;"></div>
-<div id="div8" style="width:80px;height:80px;display:none;background-color:gray;"></div>
-<div id="div9" style="width:80px;height:80px;display:none;background-color:bisque;"></div>
-<div id="div10" style="width:80px;height:80px;display:none;background-color:firebrick;"></div>
-
-</body>
+<body >
+    <div class="main">
+            <div id="form">
+                <p id="head"></p> 
+                        <form action="" method="post">
+                            <label>Full Name:</label>
+                            <input id='firstname' type='text'>
+                            <p id="p1"></p> 
+                            <label>Username(6-8 characters):</label>
+                            <input id='username' type='text'>
+                            <p id="p2"></p> 
+                            <label>Email:</label>
+                            <input id='email' type='text'>
+                            <p id="p3"></p>
+                            <label>State:</label>
+                            <select id='state'>
+                            <option>--Please Choose--</option>
+                            <option>Gujarat</option>
+                            <option>Pune</option>
+                            <option>Mumbai</option>
+                            <option>Dheli</option>
+                            </select>
+                            <p id="p4">
+                            <label>Address:</label>
+                            <input id='addr' type='text'>
+                            <p id="p5"></p>
+                            <label>contact no.:</label>
+                            <input id='contact' type='text'>
+                            <p id="p6"></p>
+                            <button id="submit">Check Form</button>
+                        </form>
+            </div>
+    </div>
+    </body>
 </html>
